@@ -1,0 +1,71 @@
+{% extends 'administrador/base.html'%}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/horarios.css' %}">
+<div class="container">
+    <div class="d-flex justify-content-center align-items-center pt-3">
+         <h2 class="subtitulo">Horarios</h2> 
+    </div>
+    <!--buscar-->
+  <form class="input-group bucar d-flex justify-content-center align-items-center " role="search">
+    <input type="search" class="form-control rounded buscar"  placeholder="Ingrese nombre" aria-label="Search"  value="{{ request.GET.buscar }}" name="buscar">
+    <button type="submit" class="btn btn-primary btn-buscar">Buscar</button>
+  </form>
+
+
+    {% for voluntario in voluntarios %}
+
+    {% if voluntario.diasDisponibles %}
+    <div class="row justify-content-center align-items-center py-3  ">
+      <div class="col-md-10 col-lg-8 border-blanco py-3 ">
+        <div class="d-flex ">
+          <div>
+            <img class="img-perfil" src="{% static 'img/logo.png' %}" alt="icono">
+          </div>
+          <div class="mx-5">
+            <h3>{{ voluntario.infoPersonal.nombres }} {{ voluntario.infoPersonal.apellidos }}</h3>
+            <p class="profesion">{{ voluntario.profesion }}</p>
+          </div>
+          <div class="calendario">
+            <ul class="day">
+              {% for dia, disponible in voluntario.diasDisponibles.items %}
+    
+              {% if dia == 'dia_lunes' %}
+              <li data-day="LU" {% if disponible %}class="selected"{% endif %}>LU</li>
+              {% endif %}
+    
+              {% if dia == 'dia_martes' %}
+              <li data-day="MA" {% if disponible %}class="selected"{% endif %}>MA</li>
+              {% endif %}
+    
+              {% if dia == 'dia_miercoles' %}
+              <li data-day="MI" {% if disponible %}class="selected"{% endif %}>MI</li>
+              {% endif %}
+    
+              {% if dia == 'dia_jueves' %}
+              <li data-day="JU" {% if disponible %}class="selected"{% endif %}>JU</li>
+              {% endif %}
+    
+              {% if dia == 'dia_viernes' %}
+              <li data-day="VI" {% if disponible %}class="selected"{% endif %}>VI</li>
+              {% endif %}
+    
+              {% if dia == 'dia_sabado' %}
+              <li data-day="SA" {% if disponible %}class="selected"{% endif %}>SA</li>
+              {% endif %}
+    
+              {% if dia == 'dia_domingo' %}
+              <li data-day="DO" {% if disponible %}class="selected"{% endif %}>DO</li>
+              {% endif %}
+              
+              {% endfor %}
+            
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+
+{% endblock %}

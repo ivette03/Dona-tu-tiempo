@@ -1,0 +1,24 @@
+.subtitulo{
+    font-size:3rem;
+    color:#53616E;
+    font-family: var(--font-family);
+    font-weight:900;
+    letter-spacing: 5px; 
+    margin-top: 1rem;
+}
+.cambiar-contraseña input{
+    border:none;
+    border-style: none;
+}
+
+input:focus{
+   outline: none;
+}
+.btn-cambiar{
+    background-color: #EF435E;
+    color: rgb(243, 239, 239);
+    border: none;
+}
+.btn-cambiar:hover{
+    background-color:#00A2C3;
+}

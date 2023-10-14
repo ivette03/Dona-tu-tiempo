@@ -1,0 +1,34 @@
+{% extends 'base.html'%}
+
+{% load static %}
+
+{% block sidebar %}
+    <li>
+        <img src="{% static 'img/iconos/home.png' %}" alt="icono">
+        <a href="{% url 'admin_view'%}">Home</a>
+
+    </li>
+<!-- 
+    <li>
+        <img src="{% static 'img/iconos/benefactores.png' %}" alt="icono">
+        <a href="{% url 'voluntario' % }">Benefactores</a>
+    </li> -->
+    <li>
+        <img src="{% static 'img/iconos/voluntarios.png' %}" alt="icono">
+        <a href="{% url 'registrar_voluntario'%}">voluntarios</a>
+    </li>
+
+
+    <li>
+        <img src="{% static 'img/iconos/horario.png' %}" alt="icono">
+        <a href="{% url 'horarios_view' %}">Horarios</a>
+    </li>
+
+
+
+    <!-- <li>
+        <img src="{% static 'img/iconos/horario.png' %}" alt="icono">
+        <a href="horario">Horarios</a>
+    </li> -->
+
+{% endblock %}

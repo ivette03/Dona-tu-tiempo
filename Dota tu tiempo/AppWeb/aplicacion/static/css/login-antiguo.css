@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #9d9d9d;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.form{
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    margin: auto;
+    background-color: #6c757d;
+    padding: 4em 2.1em;
+    border-radius: 20px;
+    box-shadow: 0 10px 50px 10px rgba(0 0 0/ 30%);
+}
+.form-title{
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 900;
+    margin-bottom: .8em;
+}
+
+.container-form{
+    margin-top: 2rem;
+    display: grid;
+    gap: 2.5em;
+}
+.grupos-form{
+    position: relative;
+    --color: white;
+}
+.form-input{
+    width: 100%;
+    font-size: 1rem;
+    padding: .4em .5em;
+    background: none;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid white;
+    color: white;
+}
+.form-input:focus + .form-label,
+.form-input:not(:placeholder-shown) + .form-label{
+    transform: translateY(-15px) scale(.7);
+    transform-origin: left top;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+.form-label{
+    position: absolute;
+    top: 0;
+    left: 5px;
+    font-size: 1.2rem;
+    color: whitesmoke;
+    color: var(--color);
+    cursor: pointer;
+    transform: translateY(6px);
+    transition: transform .6s, color .7s;
+}
+.form-submit{
+    margin-top: 2em;
+    width: 100%;
+    font-size: 1.2rem;
+    padding: .5em 2em;
+    border: none;
+    background: none;
+    color: #ffffff;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: #2f2d2d;
+}
+.form-line{
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: #ffffff;
+    left: 0;
+    bottom: 0;
+    transform: scale(0);
+    transform: left bottom;
+    transition: transform .4s;
+}
+.form-input:focus ~ .form-line,
+.form-input:not(:placeholder-shown) ~ .form-line{
+    transform: scale(1);
+}
+
+
+#bad-login {
+    color: #be2424;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin: 15px 0 0 0 ;
+    padding: 0;
+    text-align: left;
+    display: block;
+}

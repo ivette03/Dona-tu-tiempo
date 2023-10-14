@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    {% load static %}
+    <link href="{% static 'css/login.css' %}" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dona tu tiempo</title>
+</head>
+<body>
+    <form class="form" method="post" action="{% url 'login' %}">
+        
+        {% csrf_token %}
+        
+        <h1 class="form-title">Inicia Sesion</h1>
+        <div class="container-form">
+            <div class="grupos-form">
+                <input type="text" name ="username" class="form-input" autocomplete="off" placeholder=" ">
+                <label for="username" class="form-label">Usuario:</label>
+                <span class="form-line"></span>
+            </div>
+            <div class="grupos-form">
+                <input type="password" name="password" class="form-input" placeholder=" ">
+                <label for="password" class="form-label">Contraseña:</label>
+                <span class="form-line"></span>
+            </div>
+            
+        </div>
+        <p id="bad-login"> 
+            {% if LoginErrorMsg %}
+                {{ LoginErrorMsg }}
+            {% endif %}
+        </p>
+        
+
+        <input type="submit" id = "login-btn" class="form-submit" value="Entrar">
+    </form>
+    <script src="{% static 'js/login.js' %}"></script>
+</body>
+</html>

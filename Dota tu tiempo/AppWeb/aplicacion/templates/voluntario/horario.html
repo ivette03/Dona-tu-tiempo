@@ -1,0 +1,111 @@
+{% extends 'voluntario/base.html'%}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/horarios.css' %}">
+
+<div class="container">
+    <div class="d-flex justify-content-center align-items-center pt-3">
+         <h2 class="subtitulo">Horario</h2> 
+    </div>
+    <!--boton agregar horario-->
+
+
+<form id="diasForm" method="POST" action="{% url 'horario_view' %}">
+{% csrf_token %}
+
+{% if diasDisponibles %}
+
+<div class="row justify-content-center align-items-center py-3  ">
+  <div class="col-md-10 col-lg-8 border-blanco py-3 ">
+    <div class="d-flex ">
+      <div>
+        <img class="img-perfil" src="{% static 'img/logo.png' %}" alt="icono">
+      </div>
+      <div class="mx-5">
+        <h3>{{ infoPersonal.nombres }} {{ infoPersonal.apellidos }}</h3>
+        <p class="profesion">{{ voluntario.profesion }}</p>
+      </div>
+      <div class="calendario">
+        <ul class="day">
+          
+          
+          {% for dia, disponible in diasDisponibles.items %}
+
+          {% if dia == 'dia_lunes' %}
+          <li data-day="LU" {% if disponible %}class="selected"{% endif %}>LU</li>
+          {% endif %}
+
+          {% if dia == 'dia_martes' %}
+          <li data-day="MA" {% if disponible %}class="selected"{% endif %}>MA</li>
+          {% endif %}
+
+          {% if dia == 'dia_miercoles' %}
+          <li data-day="MI" {% if disponible %}class="selected"{% endif %}>MI</li>
+          {% endif %}
+
+          {% if dia == 'dia_jueves' %}
+          <li data-day="JU" {% if disponible %}class="selected"{% endif %}>JU</li>
+          {% endif %}
+
+          {% if dia == 'dia_viernes' %}
+          <li data-day="VI" {% if disponible %}class="selected"{% endif %}>VI</li>
+          {% endif %}
+
+          {% if dia == 'dia_sabado' %}
+          <li data-day="SA" {% if disponible %}class="selected"{% endif %}>SA</li>
+          {% endif %}
+
+          {% if dia == 'dia_domingo' %}
+          <li data-day="DO" {% if disponible %}class="selected"{% endif %}>DO</li>
+          {% endif %}
+          
+          {% endfor %}
+        
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% else %}
+
+<div class="row justify-content-center align-items-center py-3  ">
+  <div class="col-md-10 col-lg-8 border-blanco py-3 ">
+    <div class="d-flex ">
+      <div>
+        <img class="img-perfil" src="{% static 'img/logo.png' %}" alt="icono">
+      </div>
+      <div class="mx-5">
+        <h3>{{ infoPersonal.nombres }} {{ infoPersonal.apellidos }}</h3>
+        <p class="profesion">{{ voluntario.profesion }}</p>
+      </div>
+      <div class="calendario">
+        <ul class="day">
+          <li data-day="LU">LU</li>
+          <li data-day="MA">MA</li>
+          <li data-day="MI">MI</li>
+          <li data-day="JU">JU</li>
+          <li data-day="VI">VI</li>
+          <li data-day="SA">SA</li>
+          <li data-day="DO">DO</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endif %}
+
+</div> 
+</form>
+
+
+
+<div class="text-center py-3">
+  <button id="btn-agg" class="btn-agregar">Guardar horario</button>
+</div>
+
+<script src="{% static 'js/horario.js' %}"></script>
+
+{% endblock %}

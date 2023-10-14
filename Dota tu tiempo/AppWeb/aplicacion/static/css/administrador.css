@@ -1,0 +1,117 @@
+/* Modulo Agregar voluntarios  */
+.subtitulo h2{
+    margin-top: 2.5rem;
+    font-size:3.5rem;
+    text-align: center;
+    color:#53616E;
+    font-family: var(--font-family);
+    font-weight:900;
+    letter-spacing: 5px; 
+}
+.tabla {
+    padding-top: 40px;
+    /* margin-left: 8%; */
+}
+
+.table {
+    width: 100%; /* Ancho del 80% del contenedor padre */
+    max-width: 800px; /* Máximo ancho de la tabla */
+    margin: 0 auto; /* Centrar horizontalmente */
+   
+}
+
+.boton-agregar{
+    text-transform: uppercase;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: var(--rojo);
+    transition: background-color 1s ease;
+    border: none;
+    border-radius: 10px;
+    color: var(--blanco);
+    font-family: var(--font-family);
+    padding: 5px;
+}
+.boton-agregar:hover{
+    background-color: var(--primario);
+}
+.options{
+    display: flex;
+}
+
+.buscar{
+    margin-left: 22%;
+    width: 100%;
+    max-width: 500px;
+    height: 50px;
+}
+.btn-buscar{
+    height: 50px;
+}
+
+.buscar input {
+    margin: 0
+}
+.input-group .bucar input {
+    margin : 0;
+}
+
+.input-group>.form-control, .input-group>.form-select {
+    margin: 0;
+}
+.border{
+    border: 3px solid white;
+    border-radius: 20px;
+}
+#mensajeEliminado{
+    width: 250px;
+    padding:5px;
+    background-color:#EF435E;
+    color: white;
+    display: flex;
+    margin: 0 auto;
+}
+.mensaje-center {
+    position: fixed;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff; /* Color de texto blanco */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    z-index: 9999; /* Z-index alto para estar sobre otros elementos */
+    text-align: center; /* Alinea el texto al centro */
+    font-size: 18px; /* Tamaño del texto */
+}
+.mensaje-error {
+    position: fixed;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    background-color: #EF435E;
+    color: #fff; /* Color de texto blanco */
+    font-weight: 900;
+    padding: 20px 20px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    z-index: 9999; /* Z-index alto para estar sobre otros elementos */
+    text-align: center; /* Alinea el texto al centro */
+    font-size: 18px; /* Tamaño del texto */
+    animation: fadeOut 6s ease forwards;
+}
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        display: none; /* Oculta el mensaje al final de la animación */
+    }
+}
+
+
+
+
+
+/* Fin de modulo agregar voluntarios */

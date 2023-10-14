@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    {% load static %}
+    <link href="{% static 'css/login.css' %}" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dona tu tiempo</title>
+</head>
+<body>
+    <div class="header">
+        <div class="nombre-sitio">
+            <img src="{% static "logo.ico" %}" alt="icono" width="50px" height="50px" style="border-radius:50%;">
+            <h1>
+               <span> Dona tu </span> tiempo
+            </h1>
+            
+        </div> 
+    </div>
+ 
+    <form  method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+       
+        <div class="registro">
+            <div class="texto-registro">
+                <h3>Iniciar sesión</h3>
+                <p class="mensaje"> 
+                    {% if LoginErrorMsg %}
+                        {{ LoginErrorMsg }}
+                    {% endif %}
+                </p> 
+            </div>
+            <div class="formulario">
+                <div class="input">
+                    <input type="text"  name ="username"  autocomplete="off" placeholder="Usuario">
+                </div>
+                <div class="input">
+                    <input type="password" name="password" placeholder="Contraseña">
+                </div> 
+            </div>
+            <div class="btn">
+                <input type="submit" id = "login-btn" class="btn-ingresar" value="Entrar">
+            </div>
+        </div>
+          
+    </form>
+</body>
+</html>

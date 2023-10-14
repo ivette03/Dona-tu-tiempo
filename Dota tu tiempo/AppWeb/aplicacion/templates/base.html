@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;0,900;1,700&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body class="background">
+    
+    <div id="sidebar">
+        <div class="toggle-btn">
+            <span>&#9776;</span><!--icono de boton-->
+        </div>
+        <!--foto sidebar-->
+        <div class="foto"> 
+            <img src="{% static 'img/logo.png' %}" alt="imagen-perfil" class="img-perfil" width="100px" >
+            <h3 class="rol">{{ username }}</h3>
+        </div>
+       
+        <ul>
+            {% block sidebar %}
+            {% endblock %}
+            <!--cerrar sesion-->
+
+            
+            <li class="cambiar-password">
+                <a href="{% url 'cambiar_password' %}">
+                    Cambiar contraseña
+                </a>
+            </li>
+
+            <li class="cerrar-sesion">
+                <form action="{% url 'logout' %}" method="post">
+                    {% csrf_token %}
+                    <input type="submit" class= "btn text-light" value="Cerrar sesion">
+                </form>
+            </li>
+
+
+
+        </ul>
+    </div>
+    <!--titulo-->
+    <div class="titulo">
+        <img src="{% static 'img/logo.png' %}" alt="logo">
+        <h1 class="texto-logo">Dona tu tiempo</h1>
+    </div>
+    <!--contenido-->
+  
+        <div class="content-div">
+            <div class="row">
+
+                <!--modal-->
+                <div id="cmodal" class="cmodal">
+                    <div class="cmodal-content">
+                        <div class="cmodal-head">
+                            <h2>Agrega {{ categoria }}</h2>
+                            <span class="close-btn">×</span>
+                        </div>
+                    <form id="modal-form" method="post">
+                        {% csrf_token %}
+                        {{ form }}
+                        <div class="form-group modal-buttons">
+                            <button class="btn btn-accept">Agregar</button>
+                            <button class="btn btn-cancel">Cancelar</button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+                <!--fin modal-->
+
+                <!--modal editar-->
+                <div id="edit-modal" class="cmodal">
+                    <div class="cmodal-content">
+                        <div class="cmodal-head">
+                            <h2>Editar {{ categoria }}</h2>
+                            <span class="close-edit-btn">×</span>
+                        </div>
+                      <form id="edit-modal-form" method="put">
+                          {% csrf_token %}
+                          {{ form }}
+                          <div class="form-group modal-buttons">
+                            <button class="btn btn-accept">Agregar</button>
+                            <button class="btn btn-cancel">Cancelar</button>
+                          </div>
+                        </form>
+                    </div>
+                  </div>
+                </div>
+                <!--fin modal-->
+
+
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="{% static 'js/base.js' %}"></script>
+</body>
+</html>

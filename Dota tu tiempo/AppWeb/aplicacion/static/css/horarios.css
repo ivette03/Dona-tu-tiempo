@@ -1,0 +1,100 @@
+.subtitulo{
+    font-size:3rem;
+    color:#53616E;
+    font-family: var(--font-family);
+    font-weight:900;
+    letter-spacing: 5px; 
+    margin-top: 1rem;
+}
+.buscar{
+    margin-left: 22%;
+    width: 100%;
+    max-width: 500px;
+    height: 50px;
+}
+.btn-buscar{
+    height: 50px;
+}
+
+.buscar input {
+    margin: 0
+}
+.input-group .bucar input {
+    margin : 0;
+}
+
+.input-group>.form-control, .input-group>.form-select {
+    margin: 0;
+}
+.border-blanco{
+    border: 3px solid rgb(240, 236, 236);
+    border-radius: 10px;
+}
+.calendario {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+}
+
+.calendario ul{
+    display: flex;
+    list-style: none;
+    margin-bottom: 0;
+}
+.calendario li{
+    background-color:#53616E;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    padding:3px ;
+    text-align: center;
+    margin: 0 5px;
+    color: rgb(243, 238, 238);   
+    cursor: pointer;
+}
+
+
+.btn-eliminar{
+    background-color: #EF435E;
+    border-radius: 50%;
+    border:none;
+    color: white;
+    width: 30px;
+    height: 30px;
+}
+.btn-eliminar:hover{
+    background-color: #ee0a2c;
+}
+.btn-agregar{
+    text-transform: uppercase;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: var(--rojo);
+    transition: background-color 1s ease;
+    border: none;
+    border-radius: 10px;
+    color: var(--blanco);
+    font-family: var(--font-family);
+    padding: 5px;
+}
+.btn-agregar:hover{
+    background-color: var(--primario);
+}
+
+    
+.profesion {
+    margin-bottom: 0;
+}
+
+.selected {
+    background-color: rgb(77, 158, 15) !important;
+  }
+
+
+.mx-5 {
+    width: 150px !important;
+}
+
+  

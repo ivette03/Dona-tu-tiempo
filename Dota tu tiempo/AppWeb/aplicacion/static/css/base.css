@@ -1,0 +1,325 @@
+*{
+    margin:0;
+    padding: 0;
+
+}
+.background{
+    background-image: url(../img/background.png);
+    background-position: center;
+    height: 400vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+:root{
+    --primario:#00A2C3;
+    --font-family:Roboto ital;
+    --gris:#53616E;
+    --rojo:#EF435E;
+    --celeste:#66BECB;
+    --blanco:#ffefd5;
+
+}
+/*utilidades*/
+.espaciado{
+    letter-spacing: 5px;
+}
+.padding{
+    padding:0 5rem;
+}
+.size-font{
+    font-size: 30px;
+    font-family: var(--font-family);
+    font-weight: 900;
+}
+.gris{
+    color: var(--gris);
+}
+.rojo{
+    color: var(--rojo);
+}
+
+
+/*sidebar*/
+#sidebar{
+    position: fixed;
+    width: 260px;
+    height: 100vh;
+    background-image: url('../img/corazon.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: auto 100% ;
+    filter: brightness(0.9) saturate(0.9);
+    left: -270px;
+    transition: all 500ms linear;
+   
+    
+}
+#sidebar::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #01aacb;
+    z-index: -1;
+    opacity: 0.6;
+   
+
+}
+#sidebar.active{
+    left: 0;
+}
+.foto{
+    padding: 20px;
+    margin-bottom:50px;
+    background-color:#03aacb;
+}
+.img-perfil {
+    width: 100px; /* Ajusta el tamaño deseado para la imagen */
+    height: 100px; /* Asegura que el alto sea igual al ancho */
+    object-fit: cover; /* Ajusta la imagen para cubrir todo el espacio */
+    border-radius: 50%; /* Esto hará que la imagen sea redonda */
+    margin: 0 auto;
+    display: block;
+}
+.rol{
+    text-align: center;
+    color: var(--blanco);
+    font-size: 20px;
+    text-transform: uppercase;
+}
+#sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#sidebar  li{
+    color: var(--blanco);
+    text-align: center;
+    border-bottom: 1px solid rgba(100,100,100, .3);
+    transition: background-color .5s ease;
+    width: 100%;
+}
+
+
+#sidebar  li a{
+    display: block;
+    color: var(--blanco);
+    text-decoration: none;
+    padding: 10px; 
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 20px;    
+}
+
+
+#sidebar form input {
+    color: var(--blanco);
+    text-decoration: none;
+    padding: 10px; 
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 20px;     
+}
+
+
+.cerrar-sesion{
+    position: absolute;
+    bottom: 0;
+    cursor: pointer;
+}
+
+.cambiar-password{
+    position: absolute;
+    bottom: 0;
+    cursor: pointer;
+    margin-bottom: 85px;
+}
+
+ul li:hover{
+    background-color:var(--primario);
+    
+}
+
+/*boton*/
+#sidebar .toggle-btn{
+    position: absolute;
+    left: 280px;
+    top: 15px;
+    cursor: pointer;
+  
+}
+/*icono boton sidebar*/
+#sidebar .toggle-btn span{
+    display: block;
+    width: 30px;
+    text-align: center;
+    font-size: 20px;  
+    border: 1px solid var(--blanco);
+}
+#sidebar .toggle-btn {
+    color:var(--blanco);
+    background-color: var(--primario);
+}
+#sidebar .toggle-btn:hover{
+    background-color: var(--rojo);
+    color: var(--blanco);
+}
+
+/* Abrir y cerrar sidebar */
+#sidebar.active + .content {
+    margin-left: 260px;
+    transition: margin-left 500ms linear;
+}
+
+#sidebar:not(.active) + .content {
+    transition: margin-left 500ms linear;
+}
+
+/*titulo*/
+.texto-logo{
+    text-align: center;
+    color:  var(--blanco);
+    font-size: 40px;
+    font-family: var(--font-family);
+    font-weight: 700;
+}
+
+.titulo img{
+    width: 40px;
+    border-radius: 15px;
+}
+
+.titulo {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    padding-top: 10px;
+    background-color:#66BECB;    
+}
+
+/*home*/
+.home{
+    text-align:justify;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Modal css  */
+
+.cmodal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+  
+.cmodal-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+  
+.cmodal-content {
+    border-radius: 20px;
+    background-color: #66BECB;
+    margin: 10% auto;
+    margin-top: 50px;
+    padding: 20px;
+    width: 40%;
+    height: auto;
+}
+
+.active {
+    display: block;
+}
+
+  
+.close-edit-btn,
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.close-edit-btn:hover,
+.close-edit-btn:focus,
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+  
+.form-group label {
+    min-width: 100px;
+}
+  
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 12px;
+}
+  
+.form-group {
+    margin: 0;
+}
+  
+  
+.modal-buttons {
+    display: flex;
+}
+  
+.modal-buttons button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    margin-top: 20px;
+    margin: 15px;
+}
+  
+.modal-buttons .btn-cancel {
+    background-color: #f44336;
+    margin-right: 10px;
+}
+  
+.modal-buttons .btn-accept:hover {
+    background-color: #45a049;
+    color:#fff
+}
+  
+.modal-buttons .btn-cancel:hover {
+    background-color: #f42c1e;
+    color:#fff
+}

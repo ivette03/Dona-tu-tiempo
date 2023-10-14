@@ -1,0 +1,13 @@
+{% extends 'base.html'%}
+
+{% load static %}
+
+{% block sidebar %}
+
+    <li>
+        <img src="{% static 'img/iconos/horario.png' %}" alt="icono">
+        <a href="{% url 'horario_view' %}">Horario</a>
+    </li>
+
+{% endblock %}
+

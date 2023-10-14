@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css'%}">
+    <title>Registro</title>
+</head>
+<body>
+    <div class="background">
+        <header>
+            <div class="contenedor contenido-header">
+                 <div class="nombre-sitio">
+                     <img src="{% static 'logo.ico' %}" alt="icono" width="50px" height="50px" style="border-radius:50%;">
+                     <h1>
+                        <span> Dona tu </span> tiempo
+                     </h1>
+                 </div>     
+                 <div class="menu">
+                     <nav class="navegacion">
+                        <a class="link" href="{% url 'inicio' %}">Inicio</a>
+                       <a class="link" href="{% url 'testimonios' %}">Blog</a>
+                        <a class="link" href="{% url 'videos' %}">Videos</a>
+                       <a class="link" href="{% url 'contacto' %}">Contactanos</a>
+                       <a class="link" href="{% url 'login' %}">Login</a>
+                     </nav>
+                 </div>
+             </div>
+        </header>
+        <div class="registro">
+            <div class="texto-registro">
+                <h3>Iniciar sesión</h3>
+            </div>
+            <div class="formulario">
+                <div class="input">
+                    <input type="text"  name ="username"  autocomplete="off" placeholder="Usuario">
+                </div>
+                <div class="input">
+                    <input type="password" name="password" placeholder="Contraseña">
+                </div> 
+            </div>
+            <div class="btn">
+              <a href="#" class="btn-ingresar">Ingresar</a>
+            </div>
+            <p class="pregunta">¿No tienes una cuenta?</p>
+            <div class="btn">
+                <a class="btn-ingresar">Crear una cuenta</a>
+            </div>
+        </div>
+       <!--footer--> 
+   <footer class="footer">
+    <div class="redes">
+        <ul class="iconos">
+            <li><a href="https://www.facebook.com/100050470159208"><img src="{% static 'iconos/facebook.png'%}"></a></li>
+            <li><a href="https://www.instagram.com/donatutiempo.ong"><img src="{% static 'iconos/instagram.png'%}"></a></li>
+            <li><a href="https://www.tiktok.com/@fundacion.dona.tu"><img src="{% static 'iconos/tiktok.png' %}"></a></li>
+        </ul>
+    </div>
+    <p class="nombre-redes">Donatutiempo.ong</p>
+    <nav class="footer-nav">
+        <a class="link" href="{% url 'inicio' %}">Inicio</a>
+        <a class="link" href="{% url 'testimonios' %}">Blog</a>
+        <a class="link" href="{% url 'videos' %}">Videos</a>
+        <a class="link" href="{% url 'contacto' %}">Contactanos</a>
+        <a class="link" href="{% url 'login' %}">Login</a>
+    </nav>
+    <p class="copyright">Todos los derechos reservados &copy;</p>
+</footer>  
+    </div>
+    
+</body>
+</html>

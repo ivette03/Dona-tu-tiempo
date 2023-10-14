@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>Ubicación</title>
+</head>
+<body>
+    <div class="background">
+        <div class="contenedor">
+            <header>
+                <div class="contenido-header">
+                     <div class="nombre-sitio">
+                         <img src="{% static 'logo.ico' %}" alt="icono" width="50px" height="50px" style="border-radius:50%;">
+                         <h1>
+                            <span> Dona tu </span> tiempo
+                         </h1>
+                     </div>     
+                     <div class="menu">
+                         <nav class="navegacion">
+                            <a class="link" href="{% url 'inicio' %}">Inicio</a>
+                            <a class="link" href="{% url 'testimonios' %}">Blog</a>
+                            <a class="link" href="{% url 'videos' %}">Videos</a>
+                            <a class="link" href="{% url 'contacto' %}">Contactanos</a>
+                            <a class="link" href="{% url 'login' %}">Login</a>
+                         </nav>
+                     </div>
+                 </div>
+            </header>
+        <div class="contacto">
+            <div class="contenido-contacto">
+                <h3>CONTÁCTANOS</h3>
+                <h4>Todas las consultas generales:</h4>
+                <p>yulleterazov@gmail.com</p>
+                <h4>Consultas relacionadas con donaciones:</h4>
+                <p>Unnati Baranwal – 8076057177</p>
+                <p>donatutiempo@gmail.com</p>
+                <h4>Visitanos aqui:</h4>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing 
+                elit. Dolorem ipsa deleniti voluptate dolor voluptatum.
+                 Necessitatibus ex reprehenderit nihil doloribus natus</p>
+            </div>
+        </div> 
+        </div>
+        <section class="ubicacion">
+            <iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3987.074374665893!2d-79.90797248886814!3d-2.1250723371104128!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x902d6dd886bd6581%3A0x5110c510ed0eccee!2sMall%20del%20R%C3%ADo!5e0!3m2!1ses-419!2sec!4v1684693697765!5m2!1ses-419!2sec" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+    </div>
+     <!--footer--> 
+   <footer class="footer">
+    <div class="redes">
+        <ul class="iconos">
+            <li><a href="https://www.facebook.com/100050470159208"><img src="{% static 'iconos/facebook.png'%}"></a></li>
+            <li><a href="https://www.instagram.com/donatutiempo.ong"><img src="{% static 'iconos/instagram.png'%}"></a></li>
+            <li><a href="https://www.tiktok.com/@fundacion.dona.tu"><img src="{% static 'iconos/tiktok.png' %}"></a></li>
+        </ul>
+    </div>
+    <p class="nombre-redes">Donatutiempo.ong</p>
+        <nav class="footer-nav">
+            <a class="link" href="{% url 'inicio' %}">Inicio</a>
+            <a class="link" href="{% url 'testimonios' %}">Blog</a>
+            <a class="link" href="{% url 'videos' %}">Videos</a>
+            <a class="link" href="{% url 'contacto' %}">Contactanos</a>
+            <a class="link" href="{% url 'login' %}">Login</a>
+        </nav>
+    <p class="copyright">Todos los derechos reservados &copy;</p>
+</footer>  
+</body>
+</html>

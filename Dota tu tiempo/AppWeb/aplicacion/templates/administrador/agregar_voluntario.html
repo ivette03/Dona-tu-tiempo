@@ -1,0 +1,99 @@
+{% extends 'administrador/base.html'%}
+
+{% load static %}
+
+
+{% csrf_token %}
+{{ form }}
+
+
+{% block content %}
+
+
+<link rel="stylesheet"%% href="{% static 'css/administrador.css' %}">
+<div class="container-fluid d-flex justify-content-center align-items-center ">
+  
+  <div class="subtitulo">
+      <h2>voluntarios<h2>
+  </div>
+
+  </div>
+   <!--Boton agregar-->  
+   <div class="justify-content-center my-3 text-center">
+    <button id = "btn-add" class="boton-agregar">
+    Agregar voluntarios
+    </button>
+  </div>   
+  
+  <!--buscar-->
+  <form class="input-group bucar d-flex justify-content-center align-items-center " role="search">
+    <input type="search" class="form-control rounded buscar"  placeholder="Ingrese cédula" aria-label="Search"  value="{{ request.GET.buscar }}" name="buscar">
+    <button type="submit" class="btn btn-primary btn-buscar">Buscar</button>
+  </form>
+  <div class="text-center my-5 ">
+    {% if not tvalues %}
+    {{error}}
+    {% endif %}
+  </div>
+  
+    {% if integrity_error %}
+    <div class="mensaje-error">
+        {{ integrity_error }}
+    </div>
+     
+    
+    {% endif %}
+ 
+  <!--fin buscar-->
+  <div id="mensajeEliminacionExitosa" class="mensaje-center"  style="display: none;">
+    <p>Eliminado con exito!</p>
+  </div>
+        
+  <!--Tabla-->
+    <div class="row justify-content-center">
+        <div class="col-md-10 col-lg-8 py-3">
+            {% for value in tvalues %}
+            <div class="d-flex flex-wrap justify-content-center align-items-center py-3 border my-2">
+                <div class="col-md-4">
+                    <h3 class="mx-2">{{ value.info_personal }}</h3>
+                    <p class="mx-2" >{{ value.profesion }}</p>
+                </div>
+                <div class="col-md-4">
+                    <p class="mb-2"><strong>Correo:</strong> {{ value.info_personal.correo }}</p>
+                    <p class="mb-2"><strong>Cédula:</strong> {{ value.info_personal.cedula }}</p>
+                    <p class="mb-2"><strong>Celular:</strong> {{ value.info_personal.celular }}</p>
+                    <p>
+                        {% if value.user.last_login %}
+                        <strong>Último inicio de sesión:</strong> {{ value.user.last_login }}
+                        {% else %}
+                        No ha ingresado
+                        {% endif %}
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <div class="options d-flex justify-content-center">
+                        <button class="btn btn-danger btn-delete-row" data-id="{{ value.user.id }}">
+                            <img width="20px" src="{% static 'img/iconos/basura.png' %}" alt="Eliminar">
+                        </button>
+                        <button class="btn btn-primary btn-edit-row" data-id="{{ value.user.id }}">
+                            <img width="20px" src="{% static 'img/iconos/editar.png' %}" alt="Editar">
+                        </button>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+
+
+
+    <!--Fin tabla-->
+    
+
+<script src="{% static 'js/modal.js' %}"></script>
+<script src="{% static 'js/alerta.js' %}"></script>
+
+
+{% endblock %}

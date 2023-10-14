@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>Testimonios</title>
+</head>
+<body>
+    <div class="background-testimonios">
+        <header>
+            <div class="contenedor contenido-header">
+                 <div class="nombre-sitio">
+                     <img src="{% static 'logo.ico' %}" alt="icono" width="50px" height="50px" style="border-radius:50%;">
+                     <h1>
+                        <span> Dona tu </span> tiempo
+                     </h1>
+                 </div>     
+                 <div class="menu">
+                     <nav class="navegacion">
+                        <a class="link" href="{% url 'inicio' %}">Inicio</a>
+                        <a class="link" href="{% url 'testimonios' %}">Blog</a>
+                        <a class="link" href="{% url 'videos' %}">Videos</a>
+                        <a class="link" href="{% url 'contacto' %}">Contactanos</a>
+                        <a class="link" href="{% url 'login' %}">Login</a>
+                     </nav>
+                 </div>
+             </div>
+           </header>
+        <!--testimonios-->
+        <div class="subtitulo-testimonio">
+            <h2 class="sombreado">Historias de cambio</h2>
+        </div>
+          <div class="contenido-testimonios">
+            <img src="{% static 'imagenes/imagen-testimonio.png'%}">
+            <p>
+                Brigitte Suárez se unió a nuestra fundación motivada por la publicidad en Facebook sobre nuestras charlas médicas para embarazadas.
+               Como madre primeriza, buscaba conocimiento y apoyo en esta etapa de 36 semanas de gestación. Nuestra fundación se convirtió en su fuente
+                de sabiduría y apoyo, donde las charlas médicas ofrecidas por nuestros expertos le brindaron una comprensión más clara de los desafíos del embarazo. Aquí, encuentra comunidad y respaldo.
+                 Su testimonio refleja por qué existimos: para guiar a quienes buscan apoyo en su viaje hacia la maternidad.
+            </p>
+               
+          </div>
+          <div class="contenido-testimonios segundo-testimonio">
+            <p>Como profesional de la salud, considero un honor y un deber contribuir al bienestar de nuestra comunidad a través de mi servicio en la Fundación.
+                Donar mi tiempo y experiencia médica es una forma gratificante de marcar una diferencia real en la vida de quienes más lo necesitan. Mi compromiso 
+                es seguir siendo un apoyo confiable y un faro de conocimiento en este noble esfuerzo por mejorar la salud y el bienestar de nuestra comunidad.</p>
+            <img class="utlimaimagen" src="{% static 'imagenes/imagen2.png' %}"> 
+          </div>
+          <footer class="footer">
+            <div class="redes">
+                <ul class="iconos">
+                    <li><a href="https://www.facebook.com/100050470159208"><img src="{% static 'iconos/facebook.png'%}"></a></li>
+            <li><a href="https://www.instagram.com/donatutiempo.ong"><img src="{% static 'iconos/instagram.png'%}"></a></li>
+            <li><a href="https://www.tiktok.com/@fundacion.dona.tu"><img src="{% static 'iconos/tiktok.png' %}"></a></li>
+                </ul>
+            </div>
+            <nav class="footer-nav">
+                <a class="link" href="{% url 'inicio' %}">Inicio</a>
+                <a class="link" href="{% url 'testimonios' %}">Blog</a>
+                <a class="link" href="{% url 'videos' %}">Videos</a>
+                <a class="link" href="{% url 'contacto' %}">Contactanos</a>
+                <a class="link" href="{% url 'login' %}">Login</a>
+            </nav>
+            <p class="copyright">Todos los derechos reservados &copy;</p>
+        </footer>  
+    </div> 
+
+</body>
+</html>

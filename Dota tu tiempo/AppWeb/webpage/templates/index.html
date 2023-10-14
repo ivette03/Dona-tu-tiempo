@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css'%}">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <title>Dona tu tiempo</title>
+</head>
+<body>
+    <div class="background">
+      <header>
+       <div class="contenedor contenido-header">
+            <div class="nombre-sitio">
+                <img src="{% static 'logo.ico' %}" alt="icono" width="50px" height="50px" style="border-radius:50%;">
+                <h1>
+                   <span> Dona tu </span> tiempo
+                </h1>
+            </div>     
+            <div class="menu">
+                <nav class="navegacion">
+                    <a class="link" href="{% url 'inicio' %}">Inicio</a>
+                    <a class="link" href="{% url 'testimonios' %}">Blog</a>
+                    <a class="link" href="{% url 'videos' %}">Videos</a>
+                    <a class="link" href="{% url 'contacto' %}">Contactanos</a>
+                    <a class="link" href="{% url 'login' %}">Login</a>
+                    
+                </nav>
+            </div>
+        </div>
+      </header>
+    <section class="contenedor nosotros">
+        <div class="contenido-nosotros">
+            <div class="imagen-nosotros">
+                <img src="{% static 'imagenes/imagen1.png' %}" alt="imagen" class="nosotros-img">
+                <p class="hashtag">#Corazóndeservicio</p>
+            </div>
+
+            <div class="texto-nosotros">
+                <h2 >Dona tu <span>tiempo</span></h2>
+                <p>La Fundación Dona Tu Tiempo está compuesta por profesionales voluntarios apasionados que donan su experiencia para servir a la comunidad.
+                    Nos dedicamos a concienciar sobre la importancia de prevenir enfermedades cardiovasculares 
+                    y diabetes, dos de las principales causas de morbilidad mundial. Nuestro compromiso es mejorar la salud 
+                    y el bienestar a través de la educación y la acción.</p>
+                <div class="boton-asesoramiento">
+                    <a href="https://wa.me/593985882565">Asesoramiento en linea
+                        <img src="{% static 'iconos/Whatsapp.png'%}">
+                    </a>
+                    
+                </div>
+            </div>  
+        </div>
+    </section>
+   </div>
+    <!--footer--> 
+   <footer class="footer">
+    <div class="redes">
+        <ul class="iconos">
+            <li><a href="https://www.facebook.com/100050470159208"><img src="{% static 'iconos/facebook.png'%}"></a></li>
+            <li><a href="https://www.instagram.com/donatutiempo.ong"><img src="{% static 'iconos/instagram.png'%}"></a></li>
+            <li><a href="https://www.tiktok.com/@fundacion.dona.tu"><img src="{% static 'iconos/tiktok.png' %}"></a></li>
+        </ul>
+    </div>
+    <p class="nombre-redes">Donatutiempo.ong</p>
+        <nav class="footer-nav">
+            <a class="link" href="{% url 'inicio' %}">Inicio</a>
+            <a class="link" href="{% url 'testimonios' %}">Blog</a>
+            <a class="link" href="{% url 'videos' %}">Videos</a>
+            <a class="link" href="{% url 'contacto' %}">Contactanos</a>
+            <a class="link" href="{% url 'login' %}">Login</a>
+            
+        </nav>
+    <p class="copyright">Todos los derechos reservados &copy;</p>
+</footer>  
+</body>
+</html>
